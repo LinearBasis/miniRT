@@ -6,8 +6,10 @@ CC = gcc
 
 CFLAGS = -Wall -Wextra -Werror
 
-SRCS_DIRS = . ./colors ./figures ./intersections ./list ./scene ./vectors ./utils ./libft\
-			./gnl ./parser ./screen ./main
+SRCS_DIRS = ./srcs/ ./srcs/colors ./srcs/figures ./srcs/intersections ./srcs/list ./srcs/scene ./srcs/vectors ./srcs/utils ./srcs/libft\
+			./srcs/gnl ./srcs/parser ./srcs/screen ./srcs/main
+
+SRCS = 
 
 HEADERS_DIR = ./headers
 
@@ -26,14 +28,11 @@ $(OBJS_DIR)/%.o: %.c $(HEADERS)
 
 all: $(NAME)
 
-$(NAME):  dir_create $(HEADERS_DIR) $(OBJS)
+$(NAME): $(HEADERS_DIR) $(OBJS)
 	$(CC) $(CFLAGS)  $(OBJS) -lmlx -framework OpenGL -framework AppKit -o $(NAME)
 
-dir_create:
-	mkdir -p $(OBJS_DIR)
-
 clean:
-	rm -rf $(OBJS_DIR)
+	rm -rf $(OBJS)
 
 fclean: clean
 	rm -f $(NAME)
