@@ -6,6 +6,7 @@
 
 Легушка:
 ![Legushka](https://github.com/LinearBasis/miniRT/blob/master/screenshots/frog.jpg)
+![Legushka2](https://github.com/LinearBasis/miniRT/blob/master/screenshots/frog2.jpg)
 Царь-сцена:
 ![King scene](https://github.com/LinearBasis/miniRT/blob/master/screenshots/tsar-stsena.jpg)
 
