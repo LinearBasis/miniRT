@@ -6,7 +6,7 @@
 /*   By: dnicki <dnicki@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 14:14:10 by dnicki            #+#    #+#             */
-/*   Updated: 2021/03/24 21:17:41 by dnicki           ###   ########.fr       */
+/*   Updated: 2021/09/08 20:36:15 by dnicki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,4 +21,5 @@ int				ft_atoi(const char *str);
 char			*ft_substr(char const *s, int start, int len);
 void			ft_putnbr_fd(int n, int fd);
 void			ft_putstr_fd(char *s, int fd);
+char			*ft_strdup(char *str);
 #endif

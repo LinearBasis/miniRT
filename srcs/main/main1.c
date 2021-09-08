@@ -6,7 +6,7 @@
 /*   By: dnicki <dnicki@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/14 18:22:16 by dnicki            #+#    #+#             */
-/*   Updated: 2021/09/08 19:41:45 by dnicki           ###   ########.fr       */
+/*   Updated: 2021/09/08 20:16:24 by dnicki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ int	args_good(int argc, char *argv[], int *is_save)
 }
 
 int	solution(t_data *img_cpy, t_scene *scene_cpy, t_for_hook *hook_cpy,
-	int is_save)
+	int is_save, char *argv[])
 {
 	t_data		img;
 	t_scene		scene;
@@ -85,7 +85,7 @@ int	solution(t_data *img_cpy, t_scene *scene_cpy, t_for_hook *hook_cpy,
 	}
 	hook = fill_for_hook(&scene, &img, hook.mlx, hook.win);
 	if (is_save)
-		screenshot(&scene, &img, &hook);
+		screenshot(&scene, &img, &hook, argv);
 	mlx_put_image_to_window(hook.mlx, hook.win, img.img, 0, 0);
 	mlx_key_hook(hook.win, key_hook, &hook);
 	mlx_hook(hook.win, 17, 0, _close, &hook);

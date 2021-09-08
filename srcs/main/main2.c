@@ -6,7 +6,7 @@
 /*   By: dnicki <dnicki@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 20:08:30 by dnicki            #+#    #+#             */
-/*   Updated: 2021/09/08 19:38:22 by dnicki           ###   ########.fr       */
+/*   Updated: 2021/09/08 20:17:19 by dnicki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,5 +54,5 @@ int	main(int argc, char *argv[])
 		scene_clear(&scene);
 		return (0);
 	}
-	return (solution(&img, &scene, &hook, is_save));
+	return (solution(&img, &scene, &hook, is_save, argv));
 }

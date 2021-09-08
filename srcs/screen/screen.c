@@ -6,7 +6,7 @@
 /*   By: dnicki <dnicki@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/14 15:39:46 by dnicki            #+#    #+#             */
-/*   Updated: 2021/04/14 15:42:53 by dnicki           ###   ########.fr       */
+/*   Updated: 2021/09/08 20:49:52 by dnicki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,14 +53,40 @@ void	filler(t_bitmap_fileheader *bmfh, t_bitmap_infoheader *bmih,
 	*bmih = ih;
 }
 
-void	screenshot(t_scene *scene, t_data *img, t_for_hook *for_close)
+char	*get_file_name(char **argv)
+{
+	char	*ans;
+	int		len;
+	char	*tmp;
+
+	ans = ft_strdup(argv[1]);
+	len = ft_strlen(ans);
+	--len;
+	while (ans[len] != '/' && len >= 0)
+	{
+		if (ans[len] == '.')
+			ans[len] = 0;
+		len--;
+	}
+	ans = ft_strjoin_all_clear(ans, ft_strdup(".bmp"));
+	tmp = ft_strdup(ans + len);
+	free(ans);
+	ans = ft_strjoin_all_clear(ft_strdup("screenshots"), tmp);
+	return (ans);
+}
+
+void	screenshot(t_scene *scene, t_data *img, t_for_hook *for_close, char *argv[])
 {
 	int					fd;
 	t_bitmap_fileheader	fh;
 	t_bitmap_infoheader	ih;
 	unsigned short		bfType;
+	char				*name;
 
-	fd = open("screenshot.bmp", O_WRONLY | O_CREAT, 0666);
+	printf("in screen\n");
+	name = get_file_name(argv);
+	fd = open(name, O_WRONLY | O_CREAT, 0666);
+	free(name);
 	filler(&fh, &ih, scene->width, scene->height);
 	bfType = 0x4d42;
 	write(fd, &bfType, 2);

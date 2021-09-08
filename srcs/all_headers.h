@@ -6,7 +6,7 @@
 /*   By: dnicki <dnicki@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 21:30:22 by dnicki            #+#    #+#             */
-/*   Updated: 2021/09/08 20:05:23 by dnicki           ###   ########.fr       */
+/*   Updated: 2021/09/08 20:22:45 by dnicki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ t_color			get_dli(t_scene *scene, t_point *dot, t_figure *fig);
 void			screenshort_create(t_scene *scene, t_data img);
 
 int				_close(t_for_hook *asd);
-void			screenshot(t_scene *scene, t_data *img, t_for_hook *for_close);
+void			screenshot(t_scene *scene, t_data *img, t_for_hook *for_close, char *argv[]);
 
 int				ass_int(int *a, int b);
 double			ass_double(double *a, double b);
@@ -68,6 +68,6 @@ t_list			*ass_lst(t_list **a, t_list *b);
 int				ft_strcmp(char *str1, char *str2);
 int				args_good(int argc, char *argv[], int *is_save);
 int				solution(t_data *img_cpy, t_scene *scene_cpy,
-					t_for_hook *hook_cpy, int is_save);
+					t_for_hook *hook_cpy, int is_save, char *argv[]);
 
 #endif
