@@ -4,6 +4,8 @@
 
 Программа умеет оставлять скриншоты в формате bmp, но гит их не отображает, так что я вручную перевел часть скринов в jpg.
 
+Вероятно, программа у вас не скомпилируется (только если у вас не установлен mlx), но в будущем это будет исправлено!
+
 Легушка:
 ![Legushka](https://github.com/LinearBasis/miniRT/blob/master/screenshots/frog.jpg)
 ![Legushka2](https://github.com/LinearBasis/miniRT/blob/master/screenshots/frog2.jpg)
